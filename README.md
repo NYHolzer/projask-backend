@@ -1,5 +1,7 @@
 # README
 
+This is the Projask Backend where we will persist ("save") data to the rails database such as users, tasks, projects, and make associations.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
