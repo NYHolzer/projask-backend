@@ -5,7 +5,8 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :recurrence
       t.string :description
       t.string :deadline
-
+      t.string :assigned_by
+      
       t.timestamps
     end
   end
