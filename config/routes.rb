@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
   
-  resources :tasks
+  
   # Want API domain to be projask.com/api/v1/resource
   namespace :api do
     namespace :v1 do 
       resources :users
       resources :projects
+      resources :tasks
     end
   end
 
