@@ -7,3 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(name: "Nissan", username: "NYHolzer", password: "password", work_email:"nholzer@scharfindustries.com", gmail_email: "nissan.holzer@gmail.com")
+Project.create(title: "Project X", recurrence: "1x", description: "Project X will work on increasing revenue through customer relationships", deadline: "10/31/2019")
+Project.create(title: "Project Z", recurrence: "Monthly", description: "Project Z mission is to maintain account health through monitoring", deadline: "no deadline")
+ProjectAssignment.create(project_id: "1", user_id: "1")
+ProjectAssignment.create(project_id: "2", user_id: "1")
