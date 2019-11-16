@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
     has_many :task_assignments
     has_many :tasks, through: :task_assignments
+
+    has_many :assignee_tasks, foreign_key: :assigned_by, class_name: "Task"
 end
