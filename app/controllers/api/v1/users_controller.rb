@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
-  # GET /users
+  # GET /api/v1/users
   def index
     @users = User.all
 
@@ -9,7 +9,7 @@ class Api::V1::UsersController < ApplicationController
 
   end
 
-  # GET /users/1
+  # GET /api/v1/users/:id
   def show
     # render json: @user
     # json_string = MovieSerializer.new(movie).serialized_json
@@ -17,7 +17,7 @@ class Api::V1::UsersController < ApplicationController
     render json: user_json
   end
 
-  # POST /users
+  # POST /api/v1/users
   def create
     @user = User.new(user_params)
 
@@ -28,7 +28,7 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
+  # PATCH/PUT /api/v1/users/:id
   def update
     if @user.update(user_params)
       render json: @user
