@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  
+  get "/login", to: "sessions#create"
   
   # Want API domain to be projask.com/api/v1/resource
   namespace :api do
@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       resources :tasks
     end
   end
+
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
