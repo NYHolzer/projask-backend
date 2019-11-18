@@ -1,7 +1,7 @@
-class ProjectAssignmentSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes 
+# class ProjectAssignmentSerializer
+#   include FastJsonapi::ObjectSerializer
+#   attributes 
 
-  belongs_to :user
-  belongs_to :project
-end
+#   belongs_to :user
+#   belongs_to :project
+# end
