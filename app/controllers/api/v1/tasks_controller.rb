@@ -2,7 +2,7 @@ class Api::V1::TasksController < ApplicationController
     before_action :set_task, only: [:show, :update, :destroy]
 
     def index 
-        @tasks = Task
+        @tasks = current_user.tasks
         tasks_json = TaskSerializer.new(@tasks).serialized_json
         render json: tasks_json
     end 
