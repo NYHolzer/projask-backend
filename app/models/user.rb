@@ -10,5 +10,5 @@ class User < ApplicationRecord
     has_many :assignee_tasks, foreign_key: :assigned_by, class_name: "Task"
 
     validates :name, :username, :work_email, presence: true
-    validates :name, uniqueness: true
+    validates :name, :username, uniqueness: true
 end
