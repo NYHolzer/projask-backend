@@ -15,6 +15,20 @@ class Api::V1::TasksController < ApplicationController
         render json: task_json
     end
 
+    def create 
+        byebug
+        @task = Task.new(task_params)
+
+        if @task.save
+            render json: @task, status: :created
+        else  
+            resp = {
+                error_resp: @task.errors.full_message.to_sentence
+            }
+            render json: error_resp, status: :unprocessable_entry
+        end
+    end
+
     private
     def set_task
         @task = Task.find(params[:id])
