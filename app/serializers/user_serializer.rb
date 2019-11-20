@@ -5,6 +5,10 @@ class UserSerializer
   attribute :myTasks do |user|
     user.tasks
   end 
+
+  attribute :users do |user| 
+      users = User.all.map {|u| "#{u.id}, #{u.name}"}
+  end
   # has_many :project_assignments
   # has_many :projects, through: :project_assignments
 
