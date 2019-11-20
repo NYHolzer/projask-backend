@@ -17,9 +17,8 @@ class Api::V1::TasksController < ApplicationController
 
     def create 
         @task = current_user.tasks.build(task_params)
-
         if @task.save
-            render json: TripSerializer(@task), status: :created
+            render json: @task@, status: :created
         else  
             resp = {
                 error_resp: @task.errors.full_message.to_sentence
@@ -34,6 +33,6 @@ class Api::V1::TasksController < ApplicationController
     end
 
     def task_params
-        params.require(:task).permit(:title, :description)
+        params.require(:task).permit(:title, :description, :project_id)
     end
 end

@@ -1,26 +1,17 @@
-# README
+# PROJASK README
 
-This is the Projask Backend where we will persist ("save") data to the rails database such as users, tasks, projects, and make associations.
+This is the Projask Backend where we will persist ("save") data to the rails database such as users, tasks, projects, and make associations. In order to get the frontend of this program, please visit: https://github.com/NYHolzer/projask-frontend.git
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## INSTALLATION
+This was built to be run on a local machine. However, this can be reconfigured to be used on a server (and frontend on the client). 
+To begin download and run `Bundle Install`. This will install of the gem dependencies that is required of this program. 
+One highlight of this API is that we use Netflix's fastapi_json to serializer our models into JSON data.
 
-Things you may want to cover:
+Run `rails db:migrate` to get your database setup.
 
-* Ruby version
+If you want to run some testing to see some functionality, seed data is provided - run `rails db:seed`.
+Check the seed file for more details.
 
-* System dependencies
+On a localhost, we recommed that rails be started on port 3001 by typing in this command into the terminal: `rails s -p 3001`
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
