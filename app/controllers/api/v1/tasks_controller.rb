@@ -16,11 +16,10 @@ class Api::V1::TasksController < ApplicationController
     end
 
     def create 
-        byebug
-        @task = Task.new(task_params)
+        @task = current_user.tasks.build(task_params)
 
         if @task.save
-            render json: @task, status: :created
+            render json: TripSerializer(@task), status: :created
         else  
             resp = {
                 error_resp: @task.errors.full_message.to_sentence
