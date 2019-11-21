@@ -28,6 +28,17 @@ class Api::V1::TasksController < ApplicationController
         end
     end
 
+    def update
+        if @task.update(task_params)
+            render json: @task, status: :ok
+        else
+          error_resp = {
+            error: @task.errors.full_messages.to_sentence
+          }
+          render json: error_resp, status: :unprocessable_entity
+        end
+    end
+
     private
     def set_task
         @task = Task.find(params[:id])
