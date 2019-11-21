@@ -18,6 +18,7 @@ class Api::V1::TasksController < ApplicationController
     def create 
         @task = current_user.tasks.build(task_params)
         if @task.save
+            TaskAssignment.create(user_id: current_user.id, task_id: @task.id)
             render json: @task, status: :created
         else  
             resp = {
