@@ -30,7 +30,7 @@ class Api::V1::TasksController < ApplicationController
 
     def update
         if @task.update(task_params)
-            render json: @task, status: :ok
+            render json: @task, status: :accepted
         else
           error_resp = {
             error: @task.errors.full_messages.to_sentence
