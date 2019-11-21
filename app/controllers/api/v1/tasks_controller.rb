@@ -18,7 +18,7 @@ class Api::V1::TasksController < ApplicationController
     def create 
         @task = current_user.tasks.build(task_params)
         if @task.save
-            render json: @task@, status: :created
+            render json: @task, status: :created
         else  
             resp = {
                 error_resp: @task.errors.full_message.to_sentence
